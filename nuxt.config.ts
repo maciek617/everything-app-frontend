@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      apiBase: "http://localhost:5000",
+      apiBase: "https://everything-app-backend-p2by.onrender.com",
     },
   },
 });
