@@ -7,4 +7,5 @@ export default defineNuxtConfig({
       apiBase: "https://everything-app-backend-p2by.onrender.com",
     },
   },
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/fonts"],
 });
