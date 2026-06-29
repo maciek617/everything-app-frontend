@@ -1,10 +1,6 @@
 <template>
-  <div style="padding: 20px" class="container mx-auto">
-    <h1
-      class="font-bold text-[#ce4651] uppercase text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl"
-    >
-      BMI Calculator
-    </h1>
+  <div class="container mx-auto py-20">
+    <CommonAppTitle text="BMI Calculator" />
 
     <BmiInfo />
 

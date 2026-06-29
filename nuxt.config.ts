@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBase: "https://everything-app-backend-p2by.onrender.com",
+      // apiBase: "http://localhost:8080",
     },
   },
   modules: ["@nuxtjs/tailwindcss", "@nuxt/fonts"],
