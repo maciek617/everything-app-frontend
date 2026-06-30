@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto py-10 px-5">
+  <div class="container mx-auto pb-20 px-5">
     <AppTitle text="Vat calculator" />
     <VatInfo />
 
@@ -98,6 +98,7 @@ const netAmount = ref(0);
 const vatRate = ref(0.23);
 const isNet = ref(false);
 const isLoading = ref(false);
+const regex = ref(/[a-zA-Z]/);
 const config = useRuntimeConfig();
 
 const validateUserInput = () => {
@@ -105,8 +106,9 @@ const validateUserInput = () => {
     return (errMsg.value = "You need to insert amount that is higher than 0.");
   } else if (netAmount.value.toString().includes(",")) {
     return (errMsg.value = "You need to use ',' insted of '.'");
+  } else if (regex.value.test(netAmount.value.toString())) {
+    return (errMsg.value = "You cannot use letters in the amount field.");
   }
-
   return (errMsg.value = "");
 };
 

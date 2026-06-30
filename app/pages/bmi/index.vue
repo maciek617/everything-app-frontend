@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto py-20">
+  <div class="container mx-auto pb-20 px-4">
     <CommonAppTitle text="BMI Calculator" />
 
     <BmiInfo />
@@ -22,7 +22,7 @@
     </div>
     <div class="mt-3">
       <label for="visitors" class="uppercase text-gray-900 font-medium"
-        >insert your height (meters)</label
+        >insert your height (meters ex. 1.8)</label
       >
       <input
         type="text"
@@ -77,12 +77,12 @@
         <option value="0.90">Asia</option>
       </select>
     </div>
-
+    <p class="text-red-400">{{ errMsg }}</p>
     <CommonButton text="Calculate" @click="calculate" class="mt-5" />
 
     <div
       class="max-w-xl px-2 mt-10 py-2 rounded-md shadow-md bg-gray-50"
-      v-if="result"
+      v-if="result && !isLoading"
     >
       <h3 class="text-[#ce4651] uppercase text-xl font-bold">Your score is:</h3>
       <div class="mt-3 text-lg">
@@ -97,6 +97,8 @@
       </div>
     </div>
 
+    <CommonLoader v-if="isLoading" />
+
     <BmiResultInfo />
   </div>
 </template>
@@ -110,8 +112,33 @@ const region = ref(1.05);
 const result = ref<any>(null);
 
 const config = useRuntimeConfig();
+const regex = ref(/[a-zA-Z]/);
+const isLoading = ref(false);
+const errMsg = ref("");
+
+const validateUserInput = () => {
+  if (+height.value <= 0 || +weight.value <= 0) {
+    return (errMsg.value = "You need to insert amount that is higher than 0.");
+  } else if (
+    height.value.toString().includes(",") ||
+    weight.value.toString().includes(",")
+  ) {
+    return (errMsg.value = "You need to use ',' insted of '.'");
+  } else if (
+    regex.value.test(height.value.toString()) ||
+    regex.value.test(weight.value.toString())
+  ) {
+    return (errMsg.value = "You cannot use letters in the amount field.");
+  }
+  return (errMsg.value = "");
+};
 
 async function calculate() {
+  isLoading.value = true;
+  if (validateUserInput()) {
+    isLoading.value = false;
+    return;
+  }
   const data = await $fetch(`${config.public.apiBase}/api/tools/bmi`, {
     method: "POST",
     body: {
@@ -124,5 +151,6 @@ async function calculate() {
   });
 
   result.value = data;
+  isLoading.value = false;
 }
 </script>
