@@ -1,42 +1,59 @@
 <template>
   <NuxtLayout>
-    <nav>
-      <div class="p-4 bg-white fixed top-0 left-0 z-30 w-full shadow">
-        <p class="text-4xl font-light">
-          Everythin<span class="text-[#006AFF]">APP</span>
-        </p>
+    <nav
+      class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 sm:px-10"
+    >
+      <div class="flex items-center gap-2">
+        <div
+          class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#111827]"
+        >
+          <Sparkles :size="16" :stroke-width="2" class="text-white" />
+        </div>
+        <span class="text-sm font-semibold tracking-tight">Everything</span>
       </div>
-      <IconsMenu
-        class="fixed top-0 right-0 z-50 lg:hidden"
-        :class="!navOpen ? '' : 'hidden'"
-        @click="navOpen = !navOpen"
-      />
-      <IconsXmark
-        class="fixed top-0 right-0 z-50 lg:hidden"
-        :class="navOpen ? '' : 'hidden'"
-        @click="navOpen = !navOpen"
-      />
-      <ul
-        class="bg-white h-screen fixed top-0 right-0 w-full z-40 flex items-center justify-center gap-10 flex-col text-4xl font-light transition-transform lg:translate-x-0 lg:flex-row lg:h-fit lg:text-2xl lg:py-4 lg:bg-transparent lg:gap-20"
-        :class="navOpen ? 'translate-x-0' : 'translate-x-full'"
+      <div class="hidden items-center gap-8 text-sm text-[#6B7280] sm:flex">
+        <NuxtLink to="/" class="transition-colors hover:text-[#111827]"
+          >Home</NuxtLink
+        >
+        <NuxtLink to="/products" class="transition-colors hover:text-[#111827]"
+          >Products</NuxtLink
+        >
+        <NuxtLink to="/learn" class="transition-colors hover:text-[#111827]"
+          >Learn</NuxtLink
+        >
+      </div>
+      <NuxtLink
+        to="/products"
+        class="rounded-full bg-[#111827] px-4 py-2 text-sm font-semibold text-white transition-transform hover:scale-[1.03]"
       >
-        <li>Home</li>
-        <li>Products</li>
-        <li>Learn</li>
-        <li>About</li>
-      </ul>
+        Get started
+      </NuxtLink>
     </nav>
 
-    <NuxtPage class="mt-24 min-h-screen" />
+    <NuxtPage class="min-h-screen" />
 
-    <footer class="p-4 border border-t-2">
-      <p>
-        &copy; {{ new Date().getFullYear() }} EverythinApp. All rights reserved.
-      </p>
+    <!-- footer -->
+    <footer class="border-t border-[#E5E7EB]">
+      <div
+        class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-xs text-[#9CA3AF] sm:flex-row sm:px-10"
+      >
+        <span
+          >© {{ new Date().getFullYear() }} Everything. All rights
+          reserved.</span
+        >
+        <div class="flex gap-6">
+          <NuxtLink
+            to="/products"
+            class="transition-colors hover:text-[#374151]"
+            >Products</NuxtLink
+          >
+          <a href="#features" class="transition-colors hover:text-[#374151]"
+            >Features</a
+          >
+        </div>
+      </div>
     </footer>
   </NuxtLayout>
 </template>
 
-<script setup lang="ts">
-const navOpen = ref(false);
-</script>
+<script setup lang="ts"></script>
