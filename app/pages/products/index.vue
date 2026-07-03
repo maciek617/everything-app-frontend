@@ -58,6 +58,14 @@ const tools: Tool[] = [
     icon: Home,
     to: "/bmi",
   },
+  {
+    id: "utm",
+    name: "UTM Builder",
+    description: "Build trackable campaign URLs with UTM parameters",
+    category: "marketing",
+    icon: Wallet,
+    to: "/utm",
+  },
 ];
 
 const active = ref<string>("financial");

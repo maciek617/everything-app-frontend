@@ -318,6 +318,7 @@ const popularTools = [
   },
 
   { name: "BMI+ Calculator", icon: Scale, accent: "#2563EB", to: "/bmi" },
+  { name: "UTM Builder", icon: Target, accent: "#D97706", to: "/utm" },
 ];
 
 const features = [
