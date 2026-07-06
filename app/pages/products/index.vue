@@ -66,6 +66,14 @@ const tools: Tool[] = [
     icon: Wallet,
     to: "/utm",
   },
+  {
+    id: "profit-margin",
+    name: "Profit Margin Calculator",
+    description: "Calculate your margin in seconds.",
+    category: "financial",
+    icon: Target,
+    to: "/profit-margin",
+  },
 ];
 
 const active = ref<string>("financial");
