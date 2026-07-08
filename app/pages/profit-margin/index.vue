@@ -28,6 +28,7 @@ const marginTypeInfo = [
 ];
 const config = useRuntimeConfig();
 const result = ref();
+const regex = ref(/[a-zA-Z]/);
 const error = ref("");
 const isLoading = ref(false);
 
@@ -41,6 +42,14 @@ function validateUserInput() {
 
   if (marginType.value === "Operating" && +expenses.value <= 0) {
     return (error.value = "Operating expenses must be bigger than 0");
+  }
+
+  if (
+    regex.value.test(revenue.value.toString()) ||
+    regex.value.test(expenses.value.toString()) ||
+    regex.value.test(cost.value.toString())
+  ) {
+    return (error.value = "You cannot use letters in the amount field.");
   }
 
   return (error.value = "");
@@ -300,7 +309,7 @@ watch(
                 </div>
               </div>
               <div
-                v-else
+                v-if="!isLoading && !result"
                 class="rounded-xl border border-dashed border-[#E5E7EB] px-4 py-5 text-center text-sm text-[#9CA3AF]"
               >
                 Fill in the numbers to see your margin here
