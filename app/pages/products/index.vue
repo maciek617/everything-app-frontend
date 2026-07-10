@@ -3,18 +3,9 @@ import {
   Percent,
   Home,
   Wallet,
-  Receipt,
-  PiggyBank,
-  Megaphone,
   ArrowRight,
   Target,
-  Mail,
-  BarChart3,
   LineChart,
-  Activity,
-  Settings2,
-  Truck,
-  ClipboardList,
   type LucideIcon,
 } from "lucide-vue-next";
 
@@ -73,6 +64,15 @@ const tools: Tool[] = [
     category: "financial",
     icon: Target,
     to: "/profit-margin",
+  },
+  {
+    id: "standard-deviation",
+    name: "Statistics Calculator",
+    description:
+      "Paste a list of numbers and get a full statistical report in one go.",
+    category: "analytics",
+    icon: LineChart,
+    to: "/standard-deviation",
   },
 ];
 

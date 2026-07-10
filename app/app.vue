@@ -7,7 +7,7 @@
         <div
           class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#111827]"
         >
-          <Sparkles :size="16" :stroke-width="2" class="text-white" />
+          <!-- <Sparkles :size="16" :stroke-width="2" class="text-white" /> -->
         </div>
         <span class="text-sm font-semibold tracking-tight">Everything</span>
       </div>
