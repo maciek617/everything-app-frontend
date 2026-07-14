@@ -29,7 +29,7 @@ const categories: Category[] = [
   { id: "marketing", label: "Marketing", accent: "#F59E0B" },
   { id: "analytics", label: "Analytics", accent: "#60A5FA" },
   { id: "health", label: "Health", accent: "#FF0000" },
-  { id: "math", label: "Math", accent: "#F472B6" },
+  { id: "productivity", label: "Productivity", accent: "#F472B6" },
 ];
 
 const tools: Tool[] = [

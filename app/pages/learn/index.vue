@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import {
-  Sparkles,
   ArrowRight,
   Layers,
   Zap,
   ShieldCheck,
   Users,
   Rocket,
-  Target,
   Compass,
 } from "lucide-vue-next";
 
@@ -44,49 +42,27 @@ const values = [
 
 const timeline = [
   {
-    year: "2023",
-    title: "The idea",
-    description:
-      "Started as an internal spreadsheet of calculators our own team kept rebuilding for every client.",
-    accent: "#059669",
-  },
-  {
-    year: "2024",
-    title: "First public tools",
-    description:
-      "Launched VAT and mortgage calculators — the two most requested tools by early users.",
-    accent: "#2563EB",
-  },
-  {
-    year: "2025",
-    title: "Everything, unified",
-    description:
-      "Brought financial, marketing, analytics and operations tools together under one login.",
-    accent: "#D97706",
-  },
-  {
     year: "2026",
-    title: "Where we are now",
-    description:
-      "14+ tools, four categories, and a roadmap shaped almost entirely by user requests.",
-    accent: "#DB2777",
+    title: "The idea",
+    description: "Started as an impulse. Become as a product.",
+    accent: "#059669",
   },
 ];
 
 const team = [
   {
     name: "Maciej G.",
-    role: "Co-founder & Product",
+    role: "Founder",
     initials: "MG",
     accent: "#059669",
   },
 ];
 
 const stats = [
-  { value: "2023", label: "Founded" },
-  { value: "14+", label: "Tools shipped" },
-  { value: "50k+", label: "Calculations run" },
-  { value: "4.8/5", label: "Average rating" },
+  { value: "2026", label: "Founded" },
+  { value: "5+", label: "Tools shipped now" },
+  { value: "100+", label: "Calculations run" },
+  { value: "20+", label: "Tools in the future" },
 ];
 </script>
 

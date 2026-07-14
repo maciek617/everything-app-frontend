@@ -1,7 +1,5 @@
 <template>
   <div class="min-h-screen bg-white text-[#111827]">
-    <!-- nav -->
-
     <!-- hero -->
     <section class="relative overflow-hidden">
       <!-- glow orbs -->
@@ -32,7 +30,7 @@
           in one place.
         </h1>
         <p
-          class="mx-auto mt-6 max-w-xl text-[16px] leading-relaxed text-[#6B7280]"
+          class="mx-auto mt-6 max-w-2xl text-[16px] leading-relaxed text-[#6B7280]"
         >
           Financial calculators, health calculators, analytics dashboards and
           math operations workflows — no more switching between a dozen apps to
@@ -65,11 +63,11 @@
           class="mx-auto mt-16 grid max-w-md grid-cols-3 gap-6 border-t border-[#E5E7EB] pt-8"
         >
           <div>
-            <p class="text-2xl font-bold tabular-nums">14+</p>
+            <p class="text-2xl font-bold tabular-nums">5+</p>
             <p class="mt-1 text-xs text-[#9CA3AF]">Tools available</p>
           </div>
           <div>
-            <p class="text-2xl font-bold tabular-nums">4</p>
+            <p class="text-2xl font-bold tabular-nums">5</p>
             <p class="mt-1 text-xs text-[#9CA3AF]">Categories</p>
           </div>
           <div>
@@ -97,7 +95,7 @@
         <NuxtLink
           v-for="cat in categories"
           :key="cat.id"
-          :to="`/products?category=${cat.id}`"
+          to="/products"
           class="group relative overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#D1D5DB] hover:shadow-md"
         >
           <div
@@ -278,16 +276,15 @@ const categories = [
       "VAT, mortgage, invoicing and every money calculation you run weekly.",
     accent: "#059669",
     icon: LineChart,
-    count: 5,
+    count: 2,
   },
   {
     id: "marketing",
     label: "Marketing",
-    description:
-      "Campaigns, budgets and newsletters, planned without switching tabs.",
+    description: "Campaigns, budgets and newsletters. Without switching app.",
     accent: "#D97706",
     icon: Megaphone,
-    count: 3,
+    count: 1,
   },
   {
     id: "analytics",
@@ -296,16 +293,15 @@ const categories = [
       "Dashboards, forecasts and retention — the numbers that matter, live.",
     accent: "#2563EB",
     icon: BarChart3,
-    count: 3,
+    count: 1,
   },
   {
-    id: "operations",
-    label: "Operations",
-    description:
-      "Scheduling, tasks and workflows for teams that run on process.",
+    id: "health",
+    label: "Health",
+    description: "Calculate your BMI+ and more... with our original formula.",
     accent: "#DB2777",
     icon: Settings2,
-    count: 3,
+    count: 1,
   },
 ];
 
