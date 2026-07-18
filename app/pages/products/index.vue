@@ -74,6 +74,15 @@ const tools: Tool[] = [
     icon: LineChart,
     to: "/standard-deviation",
   },
+  {
+    id: "uuid",
+    name: "UUID Generator",
+    description:
+      "Generate unique identifiers in bulk, in the version and format you need.",
+    category: "productivity",
+    icon: Target,
+    to: "/uuid",
+  },
 ];
 
 const active = ref<string>("financial");
